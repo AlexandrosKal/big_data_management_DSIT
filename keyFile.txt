@@ -1,0 +1,4 @@
+height float
+age int
+weight float
+name string
