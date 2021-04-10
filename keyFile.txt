@@ -1,4 +1,7 @@
 height float
 age int
+code int
 weight float
 name string
+surname string
+city string

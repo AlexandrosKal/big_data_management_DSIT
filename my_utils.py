@@ -15,6 +15,18 @@ def check_syntax(line):
     return True
 
 
+def json_to_my_form(line):
+    line = line.replace('{', '{ ')
+    line = line.replace('}', ' }')
+    line = line.replace('{  }', '{}')
+    line = line.strip('{')
+    line = line.strip('}')
+    line = line.strip()
+    line = line.replace(',', ' ;')
+    line = line.replace(':', ' :')
+    return line
+
+
 def body_to_json(line):
     # transform the body of a put request to json for easier handling
     json_line = line.replace(';', ',')
@@ -23,9 +35,12 @@ def body_to_json(line):
 
 def json_to_body(line):
     # transform a json line to the format requested in the assignment
-    body_line = line.replace(',', ' ;')
-    body_line = body_line.replace(':', ' :')
-    return body_line
+    line = line.replace('{', '{ ')
+    line = line.replace('}', ' }')
+    line = line.replace('{  }', '{}')
+    line = line.replace(',', ' ;')
+    line = line.replace(':', ' :')
+    return line
 
 
 def send_full_msg(s, msg):
