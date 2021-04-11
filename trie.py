@@ -53,8 +53,6 @@ class TrieNode:
         if len(keys) == 0:
             return val
         else:
-            print(val)
-            print(f'KEYS: {keys}')
             for key in keys:
                 if len(key) == 0:
                     print('Error: query secondary key path contains empty key')
