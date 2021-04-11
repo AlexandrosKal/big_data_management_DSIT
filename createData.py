@@ -22,7 +22,7 @@ def generate_key_val(lvl, key_dict, n=0):
     for i in range(0, keys_in_val):
         # if we are not in the maximum nesting depth
         # generate a nested key value entry with 30% chance
-        if lvl != 0 and random.uniform(0, 1) >= 0.10:
+        if lvl != 0 and random.uniform(0, 1) >= 0.70:
             val = generate_key_val(lvl - 1, key_dict)
             assert len(val.keys()) == 1
             k = list(val.keys())[0]
