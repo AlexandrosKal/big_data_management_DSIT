@@ -90,7 +90,6 @@ if __name__ == "__main__":
                 print(f'Error: {e}')
         elif cmd_name == 'DELETE':
             top_lvl_key = cmd_body.strip()
-            print(f'Getting: {top_lvl_key}')
             value = my_trie.delete(top_lvl_key)
             if value is None:
                 response = 'NOT FOUND'
