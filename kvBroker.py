@@ -35,7 +35,7 @@ def close_sockets(socket_list):
 
 
 def read_data(filename):
-    # read the the data to index frome the specified file
+    # read the the data to index from the specified file
     data_to_send = []
     f = open(filename, "r")
     for ln in f.readlines():
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     print(ARGS)
     data_to_send = read_data(ARGS.i)
     srv_address_port = parse_server_file(ARGS.s)
-    buf_size = 2
+    buf_size = 2048
     print(srv_address_port)
     socket_list = connect_to_servers(srv_address_port)
     initial_no_of_srv = len(socket_list)

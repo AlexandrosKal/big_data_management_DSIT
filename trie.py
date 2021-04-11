@@ -85,19 +85,3 @@ class TrieNode:
             current_node.value = None
 
         return val
-
-    # print functions used for debugging
-    def print_node(self, indent=0):
-        prefix = ''
-        for i in range(0, indent):
-            prefix += '--'
-        print(f'{prefix}Node {self.char}')
-        print(f'{prefix}Final node: {self.end}, Node value: {self.value}')
-        print(f'{prefix}Node children: {list(self.children.keys())}')
-        return
-
-    def print_trie(self, level=0):
-        self.print_node(level)
-        for c in self.children:
-            self.children[c].print_trie(level+1)
-        return

@@ -63,7 +63,6 @@ if __name__ == "__main__":
 
         elif cmd_name == 'GET':
             top_lvl_key = cmd_body.strip()
-            my_trie.print_trie()
             value = my_trie.get(top_lvl_key)
             if value is None:
                 response = 'NOT FOUND'
