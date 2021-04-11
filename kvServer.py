@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     HOST = ARGS.a
     PORT = ARGS.p
-
+    print("Server started.")
     buf_size = 2048
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((HOST, PORT))
@@ -55,7 +55,6 @@ if __name__ == "__main__":
                     response = 'OK'
                 else:
                     response = 'ERROR: could not perform put'
-                print(response)
                 try:
                     send_full_msg(conn, response.encode('UTF-8'))
                 except socket.error as e:

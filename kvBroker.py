@@ -64,15 +64,13 @@ if __name__ == "__main__":
     parser.add_argument('-k', type=int, default=2, help='replication factor')
     ARGS = parser.parse_args()
 
-    print(ARGS)
+    print("Broker Started")
     data_to_send = read_data(ARGS.i)
     srv_address_port = parse_server_file(ARGS.s)
     buf_size = 2048
-    print(srv_address_port)
     socket_list = connect_to_servers(srv_address_port)
     initial_no_of_srv = len(socket_list)
     top_lvl_keys = []
-    print(socket_list)
 
     # Send the data to be indexed to random (ARGS.k) servers
     for line in data_to_send:
